@@ -1,0 +1,20 @@
+-content_for :head do
+  %script(type="text/javascript" src="/assets/import.js")
+%section.test_items_new
+  .container
+    =form_tag test_items_path, class: "form-horizontal", multipart: true do
+      .form-group
+        =label_tag :test_set_id, "Test Set", class: "control-label col-md-1"
+        .col-md-3
+          =select_tag :test_set_id, options_for_select(@test_sets.map {|el| [el.name, el.id]}, 0), class: 'form-control'
+      .form-group
+        =label_tag :regression_id, "Regression", class: "control-label col-md-1"
+        .col-md-3
+          =select_tag :regression_id, options_for_select(@regressions.map {|el| [el.name, el.id]}, 0), class: 'form-control'
+      .form-group
+        =label_tag :logfile, "Log File", class: "control-label col-md-1"
+        .col-md-3
+          =file_field_tag :logfile, class: 'form-control'
+      .form-group
+        .col-md-offset-1.col-md-3
+          =submit_tag 'Import', class: "btn btn-default"

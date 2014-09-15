@@ -1,0 +1,10 @@
+%section.test_sets_index
+  .container
+    =paginate @test_sets
+    - @test_sets.each do |test_set|
+      .row.test_sets
+        %h3= test_set.name
+        =render partial: "regressions/regression", locals: {regressions: test_set.recent_regressions}
+        .row
+          -# =link_to 'Add a new regression', new_regression_path, class: "col-md-3"
+          =link_to 'more...', test_set, class: "col-md-3"

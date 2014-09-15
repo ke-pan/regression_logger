@@ -1,0 +1,9 @@
+%section.test_sets_new
+  .container
+    =form_for @test_set, html: {class: "form-horizontal"} do |f|
+      .form-group
+        =f.label :name, class: "control-label col-md-1"
+        .col-md-3
+          =f.text_field :name, class: "form-control"
+        .col-md-2
+          =f.submit 'New Test Set', class: "btn btn-default"

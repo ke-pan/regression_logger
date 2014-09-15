@@ -1,0 +1,3 @@
+<%- options = @regressions.map { |regression| "<option value=#{regression.id}>#{regression.name}</option>" } %>
+<%- option_text = options.join('') %>
+$("#regression_id").empty().append("<%= option_text.html_safe %>")

@@ -1,0 +1,36 @@
+-content_for :head do
+  %script(type="text/javascript" src="/assets/g.pie-min.js")
+  %script(type="text/javascript" src="/assets/regression_pie.js")
+%section.regression-show
+  .container
+    .row.regression.panel.panel-default
+      .panel-heading= "Test Set: #{@regression.test_set_name}, Regression: #{@regression.name}"
+      .contents.panel-body
+        #key-value
+          Total:
+          =@regression.test_items.size
+          Pass:
+          %span#pass
+            =@regression.pass_test_items.size
+          Fail:
+          %span#fail
+            =@regression.fail_test_items.size
+          Hang:
+          %span#hang
+            =@regression.hang_test_items.size
+          Not Test:
+          %span#not_test
+            =@regression.not_test_test_items.size
+        %p= "Description: #{@regression.description}"
+      #holder
+    .row.test_items
+      =paginate @test_items
+      %table.table
+        %th Vector Name
+        %th Status
+        %th Fail/Hang Frame No.
+        -@test_items.each do |test_item|
+          %tr
+            %td= test_item.vectorname
+            %td= test_item.status
+            %td= test_item.frame_number

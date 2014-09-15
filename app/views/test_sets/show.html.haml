@@ -1,0 +1,11 @@
+-content_for :head do
+  %script(type="text/javascript" src="/assets/g.bar-min.js")
+  %script(type="text/javascript" src="/assets/regressions_bar.js")
+%section.test_sets_show
+  .container
+    .row
+      %h3= @test_set.name
+      .regressions
+        =paginate @regressions
+        =render partial: "regressions/regression", locals: {regressions: @regressions}
+        #holder

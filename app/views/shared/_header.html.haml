@@ -1,0 +1,18 @@
+%section#top-header.row
+  %nav.navbar.navbar-inverse.navbar-fixed-top
+    .container
+      .navbar-header
+        = link_to "FPGA Regression Logger", root_path, class: "navbar-brand"
+      .navbar-collapse.collapse
+        %ul.nav.navbar-nav
+          %li.dropdown
+            %a(href="#" class="dropdown-toggle" data-toggle="dropdown")
+              Test Sets
+              %span.caret
+            %ul.dropdown-menu(role="menu")
+              -TestSet.recent.each do |test_set|
+                %li= link_to "#{test_set.name}", test_set
+          - if logged?
+            %li= link_to "New Test Set", new_test_set_path
+            %li= link_to "New Regression", new_regression_path
+            %li= link_to "Import", new_test_item_path
