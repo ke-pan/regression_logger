@@ -12,7 +12,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'bcrypt'
-gem 'unicorn'
 gem 'kaminari'
 
 group :development do
