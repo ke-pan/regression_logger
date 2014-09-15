@@ -1,5 +1,6 @@
 -content_for :head do
-  %script(type="text/javascript" src="/assets/import.js")
+  -# %script(type="text/javascript" src="/assets/import.js")
+  =javascript_include_tag "import"
 %section.test_items_new
   .container
     =form_tag test_items_path, class: "form-horizontal", multipart: true do

@@ -1,6 +1,8 @@
 -content_for :head do
-  %script(type="text/javascript" src="/assets/g.pie-min.js")
-  %script(type="text/javascript" src="/assets/regression_pie.js")
+  -# %script(type="text/javascript" src="/assets/g.pie-min.js")
+  -# %script(type="text/javascript" src="/assets/regression_pie.js")
+  =javascript_include_tag "g.pie-min"
+  =javascript_include_tag "regression_pie"
 %section.regression-show
   .container
     .row.regression.panel.panel-default

@@ -1,6 +1,7 @@
 -content_for :head do
-  %script(type="text/javascript" src="/assets/g.bar-min.js")
-  %script(type="text/javascript" src="/assets/regressions_bar.js")
+  =javascript_include_tag "g.bar-min"
+  =javascript_include_tag "regressions_bar"
+
 %section.test_sets_show
   .container
     .row
