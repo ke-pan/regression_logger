@@ -1,5 +1,19 @@
 %section.test_sets_index
   .container
+    .alert.alert-success.alert-dismissible(role="alert")
+      %button.close(data-dismiss="alert")
+        %span(aria-hidden="true")x
+        %span.sr-only Close
+      %p
+        欢迎来到
+        %a(href="#")我
+        的展示项目。此项目仍在开发中。点击
+        %a(href="https://github.com/ke-pan/regression_logger")这里
+        查看源码。
+      %p 这是一个回归测试结果记录网页，特点是：
+      %ul
+        %li 上传 log 文件存储测试结果
+        %li 测试结果可视化
     =paginate @test_sets
     - @test_sets.each do |test_set|
       .row.test_sets
