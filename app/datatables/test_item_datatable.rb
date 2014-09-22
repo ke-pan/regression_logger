@@ -14,7 +14,7 @@ class TestItemDatatable < AjaxDatatablesRails::Base
   def searchable_columns
     # list columns inside the Array in string dot notation.
     # Example: 'users.email'
-    @searchable_columns ||= ['test_items.vectorname', 'test_items.status', 'test_items.frame_number']
+    @searchable_columns ||= ['test_items.vectorname', 'test_items.status']
   end
 
   private
