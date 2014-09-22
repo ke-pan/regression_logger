@@ -1,17 +1,20 @@
-%table.table
-  %th Name
-  %th Total
-  %th Pass
-  %th Fail
-  %th Hang
-  %th Not Test
-  %th Description
-  -regressions.each do |regression|
+%table.table#regressions-table
+  %thead
     %tr
-      %td= link_to regression.name, regression
-      %td#total=regression.test_items.size
-      %td#pass=regression.pass_test_items.size
-      %td#fail=regression.fail_test_items.size
-      %td#hang=regression.hang_test_items.size
-      %td#not_test=regression.not_test_test_items.size
-      %td=regression.description
+      %th Name
+      %th Total
+      %th Pass
+      %th Fail
+      %th Hang
+      %th Not Test
+      %th Description
+  %tbody
+    -regressions.each do |regression|
+      %tr
+        %td= link_to regression.name, regression
+        %td#total=regression.test_items.size
+        %td#pass=regression.pass_test_items.size
+        %td#fail=regression.fail_test_items.size
+        %td#hang=regression.hang_test_items.size
+        %td#not_test=regression.not_test_test_items.size
+        %td=regression.description

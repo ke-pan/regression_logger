@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: 37349993fb40fae4fa079729a25dc99d5ef3c416
+  specs:
+    jquery-datatables-rails (2.2.3)
+      jquery-rails
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -27,6 +35,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    ajax-datatables-rails (0.2.0)
+      railties (>= 3.1)
     ansi (1.4.3)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
@@ -153,12 +163,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ajax-datatables-rails
   bcrypt
   bootstrap-sass
   coffee-rails
   fabrication
   haml-rails
   jbuilder
+  jquery-datatables-rails!
   jquery-rails
   kaminari
   minitest-reporters

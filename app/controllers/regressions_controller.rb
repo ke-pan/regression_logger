@@ -2,7 +2,11 @@ class RegressionsController < ApplicationController
 
   def show
     @regression = Regression.find params[:id]
-    @test_items = @regression.test_items.page(params[:page])
+    # @test_items = @regression.test_items.page(params[:page])
+    respond_to do |format|
+      format.html
+      format.json { render json: TestItemDatatable.new(view_context) }
+    end
   end
 
   def new

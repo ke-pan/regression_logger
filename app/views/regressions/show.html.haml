@@ -3,6 +3,7 @@
   -# %script(type="text/javascript" src="/assets/regression_pie.js")
   =javascript_include_tag "g.pie-min"
   =javascript_include_tag "regression_pie"
+  =javascript_include_tag "test_item_table"
 %section.regression-show
   .container
     .row.regression.panel.panel-default
@@ -26,13 +27,15 @@
         %p= "Description: #{@regression.description}"
       #holder
     .row.test_items
-      =paginate @test_items
-      %table.table
-        %th Vector Name
-        %th Status
-        %th Fail/Hang Frame No.
-        -@test_items.each do |test_item|
-          %tr
-            %td= test_item.vectorname
-            %td= test_item.status
-            %td= test_item.frame_number
+      -# =paginate @test_items
+      %table.table#test_item_table(data-source="#{regression_path(@regression, format: :json)}")
+        %thead
+          %th Vector Name
+          %th Status
+          %th Fail/Hang Frame No.
+        %tbody
+          -# -@test_items.each do |test_item|
+          -#   %tr
+          -#     %td= test_item.vectorname
+          -#     %td= test_item.status
+          -#     %td= test_item.frame_number

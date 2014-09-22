@@ -13,6 +13,8 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'bcrypt'
 gem 'kaminari'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+gem 'ajax-datatables-rails'
 
 group :development do
   gem 'sqlite3'
