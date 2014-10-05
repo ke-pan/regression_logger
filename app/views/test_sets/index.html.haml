@@ -6,7 +6,7 @@
         %span.sr-only Close
       %p
         欢迎来到
-        %a(href="#")我
+        %a(href="http://ke-pan.github.io/resume_cn.html")我
         的展示项目。此项目仍在开发中。点击
         %a(href="https://github.com/ke-pan/regression_logger")这里
         查看源码。
@@ -14,6 +14,7 @@
       %ul
         %li 上传 log 文件存储测试结果
         %li 测试结果可视化
+        %li 动态表格
     =paginate @test_sets
     - @test_sets.each do |test_set|
       .row.test_sets
